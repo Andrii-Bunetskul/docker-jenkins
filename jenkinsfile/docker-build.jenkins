@@ -9,7 +9,7 @@ pipeline {
       steps {
         echo " =================== start building image =================== "
         dir ('docker/') {
-          sh 'docker build -f Dockerfile --force-rm -t . '
+          sh 'docker build --force-rm -t . '
         }
       }
     }
