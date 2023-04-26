@@ -1,6 +1,9 @@
 #!groovy
 
 pipeline {
+  agent {
+    label 'master'
+    }
   stages {
     stage("create docker image") {
       steps {
