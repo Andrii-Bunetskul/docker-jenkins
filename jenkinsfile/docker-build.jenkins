@@ -9,7 +9,7 @@ pipeline {
       steps {
         echo " =================== start building image =================== "
         dir ('docker/') {
-          sh 'sudo docker build . '
+          sh 'docker build . '
         }
       }
     }
