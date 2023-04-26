@@ -9,7 +9,15 @@ pipeline {
       steps {
         echo " =================== start building image =================== "
         dir ('docker/') {
-          sh 'docker build . '
+          sh 'docker build -t mynginx:latest . '
+        }
+      }
+    }
+    stage("run docker image") {
+      steps {
+        echo " =================== start running image =================== "
+        dir ('docker/') {
+          sh 'docker run -d -p 80:80 mynginx:latest'
         }
       }
     }
